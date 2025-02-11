@@ -1,18 +1,28 @@
 ---
 layout: page
-title: About
+title: "关于我"
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+# 关于我
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+你好！我是吕林涵，这是我的寒假作业站点。在这里，我将展示我的数据结构作业和其他相关内容。
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+## 我的背景
 
+我是一名华北科技学院的学生，正在学习计算机科学与技术。我对编程和数据结构有着浓厚的兴趣，并且喜欢通过实践来提高自己的技能。
 
-[jekyll-organization]: https://github.com/jekyll
+## 这个站点的目的
+
+这个站点的目的是展示我在寒假期间完成的数据结构作业。你可以在这里找到各种与数据结构相关的内容，包括代码示例、算法解释和项目展示。
+
+## 联系我
+
+如果你有任何问题或建议，请随时通过以下方式联系我：
+
+- 邮箱: [jy2193807541@gmail.com](mailto:jy2193807541@gmail.com)
+- GitHub: [102300671](https://github.com/102300671)
+
+感谢你的访问！
+
+---

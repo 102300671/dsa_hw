@@ -3,23 +3,63 @@ permalink: /404.html
 layout: default
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>页面未找到</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      color: #333;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    h1 {
+      font-size: 100px;
+      margin: 0;
+      color: #ff6f61;
+    }
+    p {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+    .emoji {
+      font-size: 50px;
+      margin: 20px 0;
+    }
+    .home-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ff6f61;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .home-link:hover {
+      background-color: #ff3b2f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>404</h1>
+    <div class="emoji">😢</div>
+    <p><strong>页面未找到</strong></p>
+    <p>抱歉，我们找不到您请求的页面。</p>
+    <a href="/" class="home-link">返回首页</a>
+  </div>
+</body>
+</html>
