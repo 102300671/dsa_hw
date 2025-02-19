@@ -22,7 +22,7 @@ title: "寒假作业"
 email: "jy2193807541@gmail.com"
 description: >- # this means to ignore newlines until "baseurl:"
   这是我的数据结构作业
-baseurl: "/Winter-HW.github.io" # the subpath of your site, e.g. /blog
+baseurl: "/102300671Winter-HW.github.io" # the subpath of your site, e.g. /blog
 url: "http://102300671.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  "102300671"
 
