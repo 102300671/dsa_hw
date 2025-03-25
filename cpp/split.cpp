@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 typedef struct Num {
-    int num;
+    int data;
     Num* next;
 } Num,*Nums;
 typedef struct Node {
@@ -9,37 +9,32 @@ typedef struct Node {
     Nums tail;
 } Node,*Nodes;
 void init(Node &node) {
-    node.head = NULL;
-    node.tail = NULL;
-}
-void add(Node &node, int num) {
-    Nums temp = new Num;
-    temp->num = num;
-    temp->next = NULL;
-    if (node.head == NULL) {
-        node.head = temp;
-        node.tail = temp;
-    } else {
-        node.tail->next = temp;
-        node.tail = temp;
-    }
-}
+    node.head=new Num;
+    node.head->next=nullptr;
+    node.tail=node.head;
+  }
+void TailInsert(Node &node,int num) {
+    node.tail->next=new Num;
+    node.tail=node.tail->next;
+    node.tail->data=num;
+    node.tail->next=nullptr;
+  }
 void split(Node &node, int n, Node &less, Node &greater) {
-    Nums current = node.head;
+    Nums current = node.head->next;
     while (current != NULL) {
-        if (current->num < n) {
-            add(less, current->num);
+        if (current->data < n) {
+            TailInsert(less, current->data);
         } else {
-            add(greater, current->num);
+            TailInsert(greater, current->data);
         }
         current = current->next;
     }
 }
 
 void printList(Node &node) {
-    Nums current = node.head;
+    Nums current = node.head->next;
     while (current != NULL) {
-        cout << current->num << " ";
+        cout << current->data << " ";
         current = current->next;
     }
 }
@@ -53,7 +48,7 @@ int main() {
     for (int i = 0; i < length; i++) {
         int num;
         cin>>num;
-        add(node, num);
+        TailInsert(node, num);
     }
     int n;
     cin>>n;
