@@ -35,13 +35,20 @@ void split(Node &node, int n, Node &less, Node &greater) {
         current = current->next;
     }
 }
-
 void printList(Node &node) {
     Nums current = node.head;
     while (current != NULL) {
         cout << current->num << " ";
         current = current->next;
     }
+}
+void des(Node &node) {
+  Nums current=node.head;
+  while(current) {
+    Nums t=current;
+    current=current->next;
+    delete t;
+  }
 }
 int main() {
     Node node, less, greater;
@@ -60,5 +67,8 @@ int main() {
     split(node, n, less, greater);
     printList(less);
     printList(greater);
+    des(node);
+    des(less);
+    des(greater);
     return 0;
 }

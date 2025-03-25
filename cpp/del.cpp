@@ -10,31 +10,31 @@ typedef struct Node {
   Nums tail;
   int length=0;
 } Node,*Nodes;
-int init(Nodes &node) {
-  node->head=new Num;
-  node->head->next=nullptr;
-  node->tail=node->head;
+int init(Node &node) {
+  node.head=new Num;
+  node.head->next=nullptr;
+  node.tail=node.head;
   return 0;
 }
-int TailInsert(Nodes &node,int num) {
-  node->tail->next=new Num;
-  node->tail=node->tail->next;
-  node->tail->data=num;
-  node->tail->next=nullptr;
-  node->length++;
+int TailInsert(Node &node,int num) {
+  node.tail->next=new Num;
+  node.tail=node.tail->next;
+  node.tail->data=num;
+  node.tail->next=nullptr;
+  node.length++;
   return 0;
 }
-int del(Nodes &node) {
-  Nums current=node->head->next;
+int del(Node &node) {
+  Nums current=node.head->next;
   while(current&&current->next) {
     if(current->data==current->next->data) {
-      if(current->next==node->tail) {
-        node->tail=current;
+      if(current->next==node.tail) {
+        node.tail=current;
       }
       Nums t=current->next;
       current->next=t->next;
       delete t;
-      node->length--;
+      node.length--;
     }
     else current=current->next;
   }
@@ -48,8 +48,8 @@ int del(Nodes &node) {
   }
   return 0;
 }*/
-int des(Nodes &node) {
-  Nums current=node->head;
+int des(Node &node) {
+  Nums current=node.head;
   while(current) {
     Nums t=current;
     current=current->next;
@@ -58,7 +58,7 @@ int des(Nodes &node) {
   return 0;
 }
 int main() {
-  Nodes node=new Node;
+  Node node;
   init(node);
   int num;
   string line;
@@ -70,8 +70,7 @@ int main() {
   }
   del(node);
   //print(node);
-  cout<<node->length;
+  cout<<node.length;
   des(node);
-  delete node;
   return 0;
 }
