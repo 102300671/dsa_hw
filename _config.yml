@@ -27,12 +27,25 @@ url: "http://102300671.github.io" # the base hostname & protocol for your site, 
 github_username:  "102300671"
 
 # Build settings
-theme: minima
+theme: 
 plugins:
   - jekyll-feed
 
 # Language setting
 lang: "zh-CN"
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false  # 行内代码块是否显示行号
+    block:
+      line_numbers: true   # 代码块是否显示行号
+      start_line: 1        # 起始行号
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
