@@ -7,12 +7,6 @@
   <title>{{ site.title }}</title>
   <!-- 引入样式表等其他资源 -->
   <link rel="stylesheet" href="{{ "/assets/css/home.css" | relative_url }}">
-  <!-- 引入MathJax库，如果你需要显示数学公式 -->
-
-  {% if page.math %}  <!-- 条件加载 -->
-    {% include mathjax.html %}
-  {% endif %}
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 
 <body>
