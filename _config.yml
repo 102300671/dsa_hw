@@ -27,7 +27,7 @@ url: "http://102300671.github.io" # the base hostname & protocol for your site, 
 github_username:  "102300671"
 
 # Build settings
-theme: 
+theme:
 plugins:
   - jekyll-feed
 
@@ -46,6 +46,7 @@ kramdown:
       line_numbers: true   # 代码块是否显示行号
       start_line: 1        # 起始行号
 
+media: https://cdn.jsdelivr.net/gh/102300671/media@main
 
 # Exclude from processing.
 # The following items will not be processed, by default.
