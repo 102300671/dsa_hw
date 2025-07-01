@@ -129,7 +129,7 @@ TripletMatrix TripletMatrix::multiply(const TripletMatrix& other) const {
         int arow = data[i].row, acol = data[i].col, aval = data[i].val;
         for (int j = 0; j < other.size; ++j) {
             if (other.data[j].row == acol) {
-                int brow = other.data[j].row, bcol = other.data[j].col, bval = other.data[j].val;
+                int bcol = other.data[j].col, bval = other.data[j].val;
                 int r = arow, c = bcol, v = aval * bval;
                 // 查找result中是否已有(r,c)
                 bool found = false;

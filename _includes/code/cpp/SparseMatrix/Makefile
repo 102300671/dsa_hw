@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -std=c++11 -Wall -Iinclude
 
-SRC = src/Triplet_MATRIX_H.cpp src/OrthogonalMatrix.cpp main.cpp
+SRC = src/Triplet_MATRIX_H.cpp src/OrthogonalMatrix.cpp src/MatrixOperations.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 TARGET = sparse_matrix_demo
 
