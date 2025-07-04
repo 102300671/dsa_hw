@@ -1,7 +1,6 @@
 #include "TripletMatrix.h"
 #include <iostream>
 #include <stdexcept>
-#include <algorithm>
 using namespace std;
 
 void TripletMatrix::ensureCapacity(int minCapacity) {
