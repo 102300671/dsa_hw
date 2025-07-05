@@ -23,9 +23,35 @@ OrthogonalMatrix::~OrthogonalMatrix() {
     delete[] colHeads;
 }
 
+// 扩容函数
+void OrthogonalMatrix::ensureCapacity(int minRows, int minCols) {
+    int newRows = (minRows > rows) ? minRows : rows;
+    int newCols = (minCols > cols) ? minCols : cols;
+    if (newRows == rows && newCols == cols) return;
+
+    // 扩展行头
+    OLNode** newRowHeads = new OLNode*[newRows];
+    for (int i = 0; i < newRows; ++i)
+        newRowHeads[i] = (i < rows) ? rowHeads[i] : nullptr;
+    delete[] rowHeads;
+    rowHeads = newRowHeads;
+
+    // 扩展列头
+    OLNode** newColHeads = new OLNode*[newCols];
+    for (int j = 0; j < newCols; ++j)
+        newColHeads[j] = (j < cols) ? colHeads[j] : nullptr;
+    delete[] colHeads;
+    colHeads = newColHeads;
+
+    rows = newRows;
+    cols = newCols;
+}
+
 // 插入元素
 void OrthogonalMatrix::insert(int r, int c, int v) {
     if (v == 0) return;
+    if (r < 0 || c < 0) throw std::out_of_range("插入位置越界");
+    ensureCapacity(r + 1, c + 1); // 自动扩容
     OLNode* node = new OLNode(r, c, v);
     // 按行插入
     OLNode** pp = &rowHeads[r];
@@ -106,7 +132,16 @@ OrthogonalMatrix OrthogonalMatrix::multiply(const OrthogonalMatrix& other) const
 // 显示
 void OrthogonalMatrix::display() const {
     cout << "稀疏矩阵（" << rows << "x" << cols << "）:" << endl;
-    for (int i = 0; i < rows; ++i)
-        for (OLNode* p = rowHeads[i]; p; p = p->right)
-            cout << "(" << p->row << ", " << p->col << ") = " << p->val << endl;
+    for (int i = 0; i < rows; ++i) {
+        OLNode* p = rowHeads[i];
+        for (int j = 0; j < cols; ++j) {
+            if (p && p->col == j) {
+                cout << p->val << "\t";
+                p = p->right;
+            } else {
+                cout << "0\t";
+            }
+        }
+        cout << endl;
+    }
 }
