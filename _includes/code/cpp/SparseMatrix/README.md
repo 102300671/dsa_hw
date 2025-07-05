@@ -17,7 +17,7 @@
 
 ### 编译步骤
 ```bash
-cd SparseMatrix
+cd .../SparseMatrix
 make
 ```
 

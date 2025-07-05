@@ -6,7 +6,7 @@ using namespace std;
 void showMainMenu() {
     cout << "请选择矩阵类型:" << endl;
     cout << "1. 三元组矩阵" << endl;
-    cout << "2. 正交链表矩阵" << endl;
+    cout << "2. 十字链表矩阵" << endl;
     cout << "3. 退出" << endl;
     cout << "输入选择: ";
 }
@@ -104,10 +104,10 @@ void handleOrthogonalMatrix() {
                 cout << "选择显示矩阵 A 还是 B (1: A, 2: B): ";
                 cin >> matrixChoice;
                 if (matrixChoice == 1) {
-                    cout << "正交链表矩阵A:" << endl;
+                    cout << "十字链表矩阵A:" << endl;
                     oA.display();
                 } else if (matrixChoice == 2) {
-                    cout << "正交链表矩阵B:" << endl;
+                    cout << "十字链表矩阵B:" << endl;
                     oB.display();
                 }
                 break;

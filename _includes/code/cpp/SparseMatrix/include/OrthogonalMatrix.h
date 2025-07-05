@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-// 稀疏矩阵的正交链表结点结构体
+// 稀疏矩阵的十字链表结点结构体
 struct OLNode {
     int row, col, val;         // 行号、列号、元素值
     OLNode *right, *down;      // 指向右侧和下方结点的指针
@@ -12,12 +12,13 @@ struct OLNode {
         : row(r), col(c), val(v), right(nullptr), down(nullptr) {}
 };
 
-// 正交链表稀疏矩阵类
+// 十字链表稀疏矩阵类
 class OrthogonalMatrix {
 private:
     int rows, cols;                    // 矩阵的行数和列数
     OLNode** rowHeads;                 // 每一行的头结点指针数组
     OLNode** colHeads;                 // 每一列的头结点指针数组
+    void ensureCapacity(int minRows, int minCols);
 public:
     OrthogonalMatrix(int r = 0, int c = 0);   // 构造函数
     ~OrthogonalMatrix();                      // 析构函数，释放内存

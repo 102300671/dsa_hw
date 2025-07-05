@@ -159,7 +159,24 @@ TripletMatrix TripletMatrix::multiply(const TripletMatrix& other) const {
 // 显示
 void TripletMatrix::display() const {
     cout << "稀疏矩阵（" << rows << "x" << cols << "，非零元素" << size << "个）:" << endl;
-    for (int i = 0; i < size; ++i) {
-        cout << "(" << data[i].row << ", " << data[i].col << ") = " << data[i].val << endl;
+    // 先将所有非零元素放入二维数组
+    int** mat = new int*[rows];
+    for (int i = 0; i < rows; ++i) {
+        mat[i] = new int[cols];
+        for (int j = 0; j < cols; ++j)
+            mat[i][j] = 0;
     }
+    for (int i = 0; i < size; ++i) {
+        mat[data[i].row][data[i].col] = data[i].val;
+    }
+    // 输出矩阵
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            cout << mat[i][j] << "\t";
+        }
+        cout << endl;
+    }
+    // 释放内存
+    for (int i = 0; i < rows; ++i) delete[] mat[i];
+    delete[] mat;
 }
